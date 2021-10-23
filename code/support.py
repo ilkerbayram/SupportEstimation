@@ -114,8 +114,8 @@ class anomaly_detector:
         return self.apply_zero_rho(x) - self.rho
 
 
-def data_flower(num_pts: int, num_leaves: int = 3):
-    samples = np.random.uniform(low=-1, high=1, size=(num_pts, 2))
+def data_flower(num_samples: int, num_leaves: int = 3):
+    samples = np.random.uniform(low=-1, high=1, size=(num_samples, 2))
     radii = np.sqrt(np.sum(samples ** 2, axis=1))
     angs = np.arccos(samples[:, 0] / (radii + 1e-10))
     pts = [
